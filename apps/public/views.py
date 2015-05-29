@@ -61,6 +61,12 @@ class AddPets(generics.CreateAPIView):
     queryset = Pet.objects.all()
 
 
+class PetDetail(generics.CreateAPIView):
+    model = Pet
+    serializer_class = PetsSerializer
+    queryset = Pet.objects.all()
+
+
 class SupplyDetail(generics.RetrieveUpdateAPIView):
     model = Supply
     serializer_class = SupplySerializer
@@ -89,3 +95,8 @@ class SpecialConditions(generics.ListCreateAPIView):
     model = SpecialConditions
     serializer_class = SpecialConditionsSerializer
     queryset = SpecialConditions.objects.all()
+
+class MapRouteList(generics.ListCreateAPIView):
+    model = MapRoute
+    serializer_class = MapRouteSerializer
+    queryset = MapRoute.objects.all()
